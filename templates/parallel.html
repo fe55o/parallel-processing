@@ -1,0 +1,92 @@
+<html>
+<head>
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  margin: 10px;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+#button li {
+    list-style-type: none;
+}
+#btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 40px;
+    margin-bottom: 40px;
+}
+#text {
+	position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 10;
+    right: 400;
+    border: double;
+
+}
+
+</style>
+</head>
+   <body>
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('input#ff').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/background_process_test',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+</script> -->
+
+
+   	  <div id="btn">
+   
+        <form method="post" action=".">
+<!-- get data from API
+insert data into database
+get data from database -->
+<ul id="button">
+    <li class="newbutton"><input type="submit" name = "one" value="get data from API" class="button button1"></input></li>
+ <!--    <li class="newbutton"><input type="submit" name = "one" value="insert data into database" class="button button1"></input></li>
+    <li class="newbutton"><input id="ff" type="submit" name = "one" value="get data from database" class="button button1"></input></li> -->
+
+</ul>
+
+        </form>
+  </div>
+
+
+<div id="text">
+
+  {% for element in result %}
+      <p>{{ element }} </p>
+  {% endfor %}
+
+</div>
+   </body>
+</html>
